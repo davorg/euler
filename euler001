@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+
+# https://projecteuler.net/problem=1
+
+use strict;
+use warnings;
+use feature 'say';
+
+my $total;
+
+for (1 .. 999) {
+  next if $_ % 3 and $_ % 5;
+  $total += $_;
+}
+
+say $total;  
