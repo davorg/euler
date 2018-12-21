@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use feature 'say';
+
+my $i = 10;
+
+OUTER: while ($i++) {
+  for (1 .. 20) {
+    next OUTER if $i % $_;
+  }
+  say $i;
+  last;
+}

@@ -1,0 +1,21 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use feature 'say';
+
+my @primes = (2 ,3, 5, 7, 11, 13);
+
+my $next = 14;
+
+while (1) {
+  push @primes, $next if is_prime($next);
+
+  if (@primes == 10_001) {
+    say $primes[-1];
+    last;
+  }
+  ++$next;
+}
+
+sub is_prime {                                                                                                            for (2 .. int(sqrt($_[0]))) {                                                                                             return unless $_[0] % $_;                                                                                             }                                                                                                                       return 1;                                                                                                             } 

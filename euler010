@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use feature 'say';
+
+my $total;
+
+for (2 .. 2E6) {
+  $total += $_ if is_prime($_);
+}
+
+say $total;
+
+sub is_prime {                                                                                                            for (2 .. int(sqrt($_[0]))) {                                                                                             return unless $_[0] % $_;                                                                                             }                                                                                                                       return 1;                                                                                                             } 

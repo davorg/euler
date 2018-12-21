@@ -1,0 +1,19 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use feature 'say';
+
+my $sum;
+my $sum_of_squares;
+
+for (1 .. 100) {
+  $sum += $_;
+  $sum_of_squares += $_ * $_;
+}
+
+my $square_of_sums = $sum * $sum;
+
+say "Sum of squares: $sum_of_squares";
+say "Square of sums: $square_of_sums";
+say "Diff: ", $square_of_sums - $sum_of_squares;

@@ -1,0 +1,31 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use feature 'say';
+
+my @range = (1 .. 1000);
+
+OUTER:
+for my $a (@range) {
+  for my $b (@range) {
+    my $sum = ($a * $a) + ($b * $b);
+
+    if (is_sq($sum)) {
+      my $c = sqrt($sum);
+      say "Got $a / $b / $c";
+      if ($a + $b + $c == 1000) {
+        say "RESULT: ", $a * $b * $c;
+        last OUTER;
+      }
+    }
+  }
+}
+
+sub is_sq {
+  my $n = shift;
+
+  my $root = sqrt($n);
+
+  return $root == int($root);
+}

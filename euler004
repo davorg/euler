@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use feature 'say';
+
+my @palindromes;
+
+for my $x (100 .. 999) {
+  for my $y (100 .. 999) {
+    my $prod = $x * $y;
+    push @palindromes, $prod if $prod == reverse $prod;
+  }
+}
+
+@palindromes = sort { $a <=> $b } @palindromes;
+
+say $palindromes[-1];
