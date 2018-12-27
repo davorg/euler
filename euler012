@@ -1,0 +1,32 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use feature 'say';
+
+my $curr = 0;
+my $add  = 1;
+
+while (1) {
+  $curr += $add++;
+
+  if (scalar divisors($curr) > 500) {
+    say $curr;
+    last;
+  }
+}
+
+sub divisors {
+  my $x = shift;
+
+  my @divisors;
+  for (1 .. $x / 2) {
+    push @divisors, $_ unless $x % $_;
+  }
+  push @divisors, $x;
+
+  # say "$x : @divisors";
+  say "$x / ", scalar @divisors;
+
+  return @divisors;
+}
